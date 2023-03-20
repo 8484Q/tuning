@@ -1,0 +1,116 @@
+.\"/*
+.\" * All rights reserved
+.\" *Copyright (c) [Year] [name of copyright holder]
+.\" *[Software Name] is licensed under Mulan PSL v2.
+.\" *You can use this software according to the terms and conditions of the Mulan PSL v2.
+.\" *You may obtain a copy of Mulan PSL v2 at:
+.\" *         http://license.coscl.org.cn/MulanPSL2
+.\" *THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND,
+.\" *EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
+.\" *MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE. 
+.\" */
+.\"
+.TH "keentune" "8" "28 April 2022" "OpenAnolis KeenTune SIG" "KeenTune"
+.SH NAME
+keentune - command line tool for Dynamic and Static tuning
+.SH SYNOPSIS
+\fBkeentune\fP [\fIoptions\fP]
+.SH DESCRIPTION
+\fBkeentune\fR is a dual-engine intelligent tuning product for operating system optimization built with AI algorithms and expert knowledge. It provides lightweight and cross-platform one-click performance tuning for mainstream operating systems to support upstream applications running with optimal performance in the customized operating environment\.
+.
+.SH OPTIONS
+.
+.SS "Dynamic tuning"
+Provide a set of configuration parameters for the kernel, compiler, runtime, and upstream application, identify sensitive parameters using AI algorithms, and recommend the optimal configuration for parameters and their combination\.
+.
+.TP
+\fBparam delete --job\fR
+Delete the dynamic parameter tuning job\.
+.
+.TP
+\fBparam jobs\fR
+List parameter optimization jobs\.
+.
+.TP
+\fBparam list\fR
+List parameter and benchmark configuration files\.
+.
+.TP
+\fBparam rollback\fR
+Restore the initial state\.
+.
+.TP
+\fBparam stop\fR
+Terminate a parameter tuning job\.
+.
+.TP
+\fBparam tune\fR
+Deploy and start a parameter tuning job\.
+.
+.TP
+\fBparam dump\fR
+Dump the parameter tuning result to a profile\.
+.
+.SS "Static tuning"
+Preset multiple typical high-load scenarios and optimized configurations from expert experiences. Users can improve the operating performance through one-click setting. This mode also supports applying the empirically optimized configurations for small-scale environments to large-scale clusters\.
+.
+.TP
+\fBprofile delete --name\fR
+Delete a profile\.
+.
+.TP
+\fBprofile generate --name\fR
+Generate a parameter configuration file from a profile\.
+.
+.TP
+\fBprofile info --name\fR
+Show information of the specified profile\.
+.
+.TP
+\fBprofile list\fR
+List all profiles\.
+.
+.TP
+\fBprofile rollback\fR
+Restore the initial state\.
+.
+.TP
+\fBprofile set --name\fR
+Apply a profile to the target machine\.
+.
+.SS "Sensitize parameter collection"
+Sensitive parameter identification and explanation with AI algorithms\.
+.
+.TP
+\fBsensitize delete --job\fR
+Delete the data collected for sensitivity identification\.
+.
+.TP
+\fBsensitize jobs\fR
+List the available data for sensitivity identification\.
+.
+.TP
+\fBsensitize stop\fR
+Terminate a sensitivity identification job\.
+.
+.TP
+\fBsensitize train --data\fR
+Deploy and start a sensitivity identification job\.
+.
+.SS "Info command"
+.TP
+\fB--help\fR
+help message\.
+.
+.TP
+\fB-v/--version\fR
+Print the version number of keentune\.
+.SH "FILES"
+.nf
+/etc/keentune/*
+
+.SH "SEE ALSO"
+.BR keentuned (8)
+
+.SH "BUGS"
+Report bugs at: https://gitee.com/anolis/keentuned/issues

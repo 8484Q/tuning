@@ -1,0 +1,51 @@
+.\"/*
+.\" * All rights reserved
+.\" *Copyright (c) [Year] [name of copyright holder]
+.\" *[Software Name] is licensed under Mulan PSL v2.
+.\" *You can use this software according to the terms and conditions of the Mulan PSL v2.
+.\" *You may obtain a copy of Mulan PSL v2 at:
+.\" *         http://license.coscl.org.cn/MulanPSL2
+.\" *THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND,
+.\" *EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
+.\" *MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
+.\" */
+.\".
+.TH "keentune-brain" "8" "5 May 2022" "OpenAnolis KeenTune SIG" "KeenTune"
+.SH NAME
+KeenTune-brain - AI tuning Engine of 'KeenTune' system parameter optimization product
+.SH SYNOPSIS
+\fBKeenTune-brain\fP
+.SH DESCRIPTION
+\fBKeenTune-brain\fR KeenTune-brain is an AI tuning Engine of 'KeenTune' system parameter optimization product. KeenTune-brain implements a variety of intelligent tuning algorithms. It iterates between generating a candidate configuration and receiving the corresponding evaluation result from the Keentune-bench. It finally recommend the optimal parameter configuration. Its core methods include init, acquire, feedback, and best.
+.
+.SH "init"
+Initialize the optimizer.
+.
+.SH "acquire"
+Acquire a configuration candidate.
+.
+.SH "feedback"
+Feedback the benchmark performance score of applying the latest configuration candidate.
+.
+.SH "best"
+Get the optimal configuration.
+.
+.SH "end"
+Stop the optimizer.
+.
+.SH "Run"
+.
+.TP
+\fBsystemctl start keentune-brain.service\fR
+.
+.SH "FILES"
+.nf
+/etc/keentune
+.
+.SH "SEE ALSO"
+.LP
+keentune-brain.conf(5)
+
+.SH "BUGS"
+Report bugs at: https://gitee.com/anolis/keentuned/issues
+                                                                                                                                                                                                1,1          顶端

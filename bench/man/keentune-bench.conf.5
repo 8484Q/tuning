@@ -1,0 +1,56 @@
+.TH "keentune-bench.conf" "5" "5 May 2022" "KeenTune"
+.SH NAME
+keentune-bench.conf - keentune-bench configuration file
+.SH SYNOPSIS
+.B /etc/keentune/conf/keentune-bench.conf
+.SH DESCRIPTION
+This man page documents the format of the keentune-bench configuration file.
+The \fIkeentune-bench.conf\fR file uses the ini\-file format.
+.
+.SH "[bench]"
+.
+.TP
+\fBKeenTune_HOME = /etc/keentune/\fR
+Keentune installation path
+.
+.TP
+\fBKeenTune_WORKSPACE = /var/keentune/\fR
+Keentune workspace
+.
+.TP
+\fBBENCH_PORT = 9874\fR
+Keentune-bench runs the port
+.
+.SH "[log]"
+.
+.TP
+\fBCONSOLE_LEVEL = INFO\fR
+Logging level of terminal output
+.
+.TP
+\fBLOGFILE_LEVEL = DEBUG\fR
+The log level of log file output
+.
+.TP
+\fBLOGFILE_PATH  = /var/log/keentune/bench.log\fR
+Log File Name
+.
+.TP
+\fBLOGFILE_INTERVAL = 1\fR
+The time interval of the log file
+.
+.TP
+\fBLOGFILE_BACKUP_COUNT = 14\fR
+Number of log files saved
+
+.SH FILES
+.I /etc/keentune/conf/keentune-bench.conf
+
+.SH "SEE ALSO"
+.LP
+keentune-bench(8)
+
+.SH "BUGS"
+Report bugs at: https://gitee.com/anolis/keentuned/issues
+
+                                                                                1,1          顶端

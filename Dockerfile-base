@@ -1,0 +1,66 @@
+FROM centos:latest
+
+RUN rm -rf /etc/yum.repos.d/*.repo
+
+COPY ./repos/* /etc/yum.repos.d/
+
+RUN yum -y update
+RUN dnf check
+RUN dnf check-update
+RUN dnf update
+RUN yum clean all
+RUN dnf clean all
+RUN yum makecache
+RUN yum -y install epel-release
+
+RUN yum -y install vim
+RUN yum -y install net-tools
+
+RUN yum -y install go
+RUN go env
+RUN go version
+RUN go env -w GO111MODULE=on
+RUN go env -w GOPROXY=https://goproxy.cn,direct
+
+RUN dnf install clang llvm-devel -y
+
+RUN yum install openssl-devel bzip2-devel libffi-devel zlib-devel make cmake -y
+RUN yum install gcc -y --nobest
+RUN yum install gcc-c++ -y --nobest
+
+RUN yum -y install python36 python36-devel rust
+
+RUN pip3 install --upgrade pip
+RUN pip3 install --upgrade setuptools
+RUN pip3 install wheel
+
+RUN pip3 install tornado==6.1
+RUN pip3 install pynginxconfig
+RUN pip3 install requests==2.25.1 
+RUN pip3 install pySOT==0.3.3 
+RUN pip3 install scikit_learn==0.24.2 
+RUN pip3 install POAP==0.1.26
+RUN pip3 install hyperopt==0.2.5
+
+RUN pip3 install numpy==1.19.5
+RUN pip3 install ultraopt==0.1.1
+RUN pip3 install xgboost
+RUN pip3 install shap==0.35.0
+
+
+RUN yum -y install keentuned
+
+RUN python3 setup.py install
+# RUN yum -y install keentune-bench --nobest
+# RUN yum -y install keentune-target --nobest
+# RUN yum -y install keentune-brain --nobest
+
+# COPY ./volume/conf/* /etc/keentune/conf/
+
+EXPOSE 9871
+EXPOSE 9872
+EXPOSE 9873
+EXPOSE 9874
+
+ENTRYPOINT ["tail", "-f", "/dev/null"]
+# ENTRYPOINT sh start.sh

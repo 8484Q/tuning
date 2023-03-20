@@ -1,0 +1,86 @@
+.TH "keentune-brain.conf" "5" "5 May 2022" "KeenTune"
+.SH NAME
+keentune-brain.conf - keentune-brain configuration file
+.SH SYNOPSIS
+.B /etc/keentune/conf/keentune-brain.conf
+.SH DESCRIPTION
+This man page documents the format of the keentune-brain configuration file.
+The \fIkeentune-brain.conf\fR file uses the ini\-file format.
+.
+.SH "[brain]"
+.
+.TP
+\fBKeenTune_HOME = /etc/keentune/\fR
+Keentune install path
+.
+.TP
+\fBKeenTune_WORKSPACE = /var/keentune/\fR
+Keentune workspace
+.
+.TP
+\fBTARGET_PORT = 9872\fR
+brain algorithm port
+.
+.TP
+\fBGRAPH_PORT = 9000\fR
+brain sensitive port
+.
+.SH "[tuning]"
+.
+.TP
+\fBMAX_SEARCH_SPACE = 1000\fR
+Limitation of the Max-number of available value of a single knob to avoid dimension explosion
+.
+.TP
+\fBSURROGATE = RBFInterpolant\fR
+Surrogate in tuning algorithm - HORD i.e. RBFInterpolant, PolyRegressor, GPRegressor
+.
+.TP
+\fBSTRATEGY = DYCORSStrategy\fR
+Strategy in tuning algorithm - HORD i.e. DYCORSStrategy, SRBFStrategy, SOPStrategy, EIStrategy
+.
+.SH "[sensitize]"
+.
+.TP
+\fBEPOCH = 5\fR
+Modle train epoch in Sensitization Algorithm, improve the accuracy and running time
+.
+.TP
+\fBTOPN = 10\fR
+The top number to select sensitive knobs
+.
+.TP
+\fBTHRESHOLD = 0.9\fR
+The sensitivity threshold to select sensitive knobs
+.
+.SH "[log]"
+.
+.TP
+\fBCONSOLE_LEVEL = INFO\fR
+Logging level of terminal output
+.
+.TP
+\fBLOGFILE_LEVEL = DEBUG\fR
+The log level of log file output
+.
+.TP
+\fBLOGFILE_PATH  = /var/log/keentune/brain.log\fR
+Log File Name
+.
+.TP
+\fBLOGFILE_INTERVAL = 1\fR
+The time interval of the log file
+.
+.TP
+\fBLOGFILE_BACKUP_COUNT = 14\fR
+Number of log files saved
+.
+.SH FILES
+.I /etc/keentune/conf/keentune-brain.conf
+
+.SH "SEE ALSO"
+.LP
+keentune-brain(8)
+
+.SH "BUGS"
+Report bugs at: https://gitee.com/anolis/keentuned/issues

@@ -1,0 +1,11 @@
+[Unit]
+Description=AI Tuning tool Daemon
+After=systemd-sysctl.service network.target
+Conflicts=tuned.service
+
+[Service]
+ExecStart=/usr/bin/keentuned
+Type=notify
+
+[Install]
+WantedBy=multi-user.target

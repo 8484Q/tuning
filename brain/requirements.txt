@@ -1,0 +1,10 @@
+hyperopt==0.2.5
+numpy
+POAP
+pySOT
+requests
+scikit_learn
+setuptools
+shap
+tornado
+xgboost

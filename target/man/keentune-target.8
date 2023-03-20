@@ -1,0 +1,51 @@
+.\"/*
+.\" * All rights reserved
+.\" *Copyright (c) [Year] [name of copyright holder]
+.\" *[Software Name] is licensed under Mulan PSL v2.
+.\" *You can use this software according to the terms and conditions of the Mulan PSL v2.
+.\" *You may obtain a copy of Mulan PSL v2 at:
+.\" *         http://license.coscl.org.cn/MulanPSL2
+.\" *THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND,
+.\" *EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
+.\" *MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
+.\" */
+.\".
+.TH "KeenTune-Agent" "8" "5 May 2022" "OpenAnolis KeenTune SIG" "KeenTune"
+.
+.SH NAME
+KeenTune-Agent - optimized configuration setting component
+.
+.SH SYNOPSIS
+\fBKeenTune-Agent\fP
+.
+.SH DESCRIPTION
+\fBKeenTune-Agent\fR  KeenTune-Agent is the optimized configuration setting component. It is the only component of KeenTune that needs to be deployed in target environments. It is used to set the optimized configuration in both dynamic and static tuning. It support operations such as parameter set, get, backup, and rollback.
+.
+.SH "Set parameters configuration"
+Set the specified parameter configuration to this environment.
+.
+.SH "Read parameters configuration"
+Read the parameter configuration of this environment.
+.
+.SH "backup"
+Save the parameter configuration of this environment to the backup file.
+.
+.SH "rollback"
+Rollback to the parameter configuration saved in the backup file.
+.
+.SH "Run"
+.
+.TP
+\fBsystemctl start keentune-agent.service\fR
+.
+.SH "FILES"
+.I /etc/keentune/
+.
+.SH "SEE ALSO"
+.LP
+keentune-target.conf(5)
+keentune-agent.domain(7)
+
+.SH "BUGS"
+Report bugs at: https://gitee.com/anolis/keentuned/issues
+                                                                                                                                                                                                1,1          顶端

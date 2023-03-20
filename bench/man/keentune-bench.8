@@ -1,0 +1,61 @@
+.\"/*
+.\" * All rights reserved
+.\" *Copyright (c) [Year] [name of copyright holder]
+.\" *[Software Name] is licensed under Mulan PSL v2.
+.\" *You can use this software according to the terms and conditions of the Mulan PSL v2.
+.\" *You may obtain a copy of Mulan PSL v2 at:
+.\" *         http://license.coscl.org.cn/MulanPSL2
+.\" *THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND,
+.\" *EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
+.\" *MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
+.\" */
+.\".
+.TH "keentune-bench" "8" "5 May 2022" "OpenAnolis KeenTune SIG" "KeenTune"
+.SH NAME
+KeenTune-bench - the benchmark controlling component
+.SH SYNOPSIS
+\fBKeenTune-bench\fP
+.SH DESCRIPTION
+\fBKeenTune-bench\fR  KeenTune-bench is a benchmark controlling component and needs to be deployed with benchmark tools. It is used in dynamic tuning to run benchmark tools and collect evaluation results. KeenTune-bench runs in an environment that is different from the tunning target environment. The tunning target environment is used for running benchmark script to calculate the performance score from applying a specified parameter configuration.
+
+.SH "Run"
+.
+.TP
+\fBsystemctl start keentune-bench.service\fR
+.
+.SH "benchmark"
+KeenTune-bench interacts with keentuned using the tornado architecture. It parses the post request data, gets the python file of benchmark, and returns the results after execution. It also sends the heartbeat packet data for the keentuned process to detect. At the moment we provide the following pre-defined benchmark:
+
+.TP
+.BI "wrk"
+Wrk is a more advanced HTTP stress testing tool that is capable of generating a heavy load when run on a single multi-core CPU.
+.TP
+.BI "tpce"
+TPC-E tests the OLTP performance of the database by simulating the secure transaction of financial firms. The TPC-E test focuses more on the database for processing related transactions from financial firms and their customer accounts.
+.TP
+.BI "tpch"
+TPC-H evaluates the decision support capability of a specific query, mainly for the capability of the server in data mining and analysis processing tasks. TPC-H is commonly used for measuring the ability of 
+a newly developed database system to provide query decision support.
+.TP
+.BI "iperf"
+Iperf3 is a bandwidth testing tool that supports the adjustment of various parameters such as communication protocol, number of packets, transmission duration, reporting of network bandwidth, packet loss rate, and other parameters.
+.TP
+.BI "fio"
+The fio is an IO test tool that can run on Linux, Windows, and can be used to test the performance of local disk, networked storage, etc.
+Fio supports flexible configuration, multi-client concurrent testing (server, client mode), and file-level, object-level storage testing.
+.TP
+.BI "sysbench"
+It is the performance test and optimization of the mysql database.
+
+.SH "FILES"
+.nf
+.I /etc/keentune
+.I /etc/keentune/benchmark
+.
+.SH "SEE ALSO"
+.LP
+keentune-bench.conf(5)
+
+.SH "BUGS"
+Report bugs at: https://gitee.com/anolis/keentuned/issues
+                                                                                                                                                                                                1,1          顶端

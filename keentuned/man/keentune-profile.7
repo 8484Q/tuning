@@ -1,0 +1,52 @@
+.\"/*
+.\" * All rights reserved
+.\" *Copyright (c) [Year] [name of copyright holder]
+.\" *[Software Name] is licensed under Mulan PSL v2.
+.\" *You can use this software according to the terms and conditions of the Mulan PSL v2.
+.\" *You may obtain a copy of Mulan PSL v2 at:
+.\" *         http://license.coscl.org.cn/MulanPSL2
+.\" *THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND,
+.\" *EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
+.\" *MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE. 
+.\" */
+.\"
+.TH "keentune-profile" "7" "6 May 2022" "OpenAnolis KeenTune SIG" "KeenTune"
+.SH NAME
+keentune-profile - description of basic keentune profile
+
+.SH DESCRIPTION
+Preset a number of typical high-load scenarios and optimized configurations from expert experiences. Users can improve the operating performance through one-click setting in the static tuning mode.
+
+These configuration files are stored in /etc/keentune/profile.
+
+You can dump the parameter tuning result to a profile. The file storage directory is located in /var/keentune/profile.
+
+.SH PROFILE
+At the moment we provide the following pre-defined profiles:
+
+.TP
+.BI "cpu_high_load.conf"
+
+.TP
+.BI "mysql_tpcc.conf"
+
+.TP
+.BI "net_low_latency.conf"
+
+.TP
+.BI "io_high_throughput.conf"
+
+.TP
+.BI "net_high_throuput.conf"
+
+.SH FILES
+.nf
+.I /etc/keentune/profile/
+.I /var/keentune/profile/
+
+.SH "SEE ALSO"
+.LP
+keentune(8)
+
+.SH "BUGS"
+Report bugs at: https://gitee.com/anolis/keentuned/issues

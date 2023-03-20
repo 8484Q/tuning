@@ -1,0 +1,47 @@
+.\"/*
+.\" * All rights reserved
+.\" *Copyright (c) [Year] [name of copyright holder]
+.\" *[Software Name] is licensed under Mulan PSL v2.
+.\" *You can use this software according to the terms and conditions of the Mulan PSL v2.
+.\" *You may obtain a copy of Mulan PSL v2 at:
+.\" *         http://license.coscl.org.cn/MulanPSL2
+.\" *THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND,
+.\" *EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
+.\" *MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
+.\" */
+.\".
+.TH "keentuned" "8" "5 May 2022" "OpenAnolis KeenTune SIG" "KeenTune"
+.SH NAME
+KeenTuned - system performance tuning daemon
+.SH SYNOPSIS
+\fBKeenTuned\fP
+.SH DESCRIPTION
+\fBKeenTuned\fR KeenTuned is the management component of KeenTune, including CLI and Daemon. CLI provides to users the command line interfaces, including three types of commands: basic commands, static tuning commands, and dynamic tuning commands.
+.
+.SH "CLI"
+Command-line Interface. It implements all the command-line functions of keentune, including dynamic and static tuning, sensitive parameter identification, and check the compliance for the command-line parameters.
+.
+.SH "Daemon"
+KeenTune Daemon. This is the core component of KeenTune. It implements the launching of the keentuned service and the registration of the rpc service, listens to client connections, and creates working directories.
+.
+.SH "Run"
+.
+.TP
+\fBsystemctl start keentuned.service\fR
+
+.SH "FILES"
+.nf
+.I /etc/keentune
+.I /var/keentune
+
+.SH "SEE ALSO"
+.BR keentune(8)
+.BR keentuned.conf(5)
+.BR keentune-benchmark(7)
+.BR keentune-param(7)
+.BR keentune-profile(7)
+.BR keentune-detect(7)
+
+.SH "BUGS"
+Report bugs at: https://gitee.com/anolis/keentuned/issues
+                                                                                                                                                                                                1,1          顶端
