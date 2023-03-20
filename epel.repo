@@ -1,0 +1,6 @@
+[KeenTune]
+name=keentune-os
+baseurl=https://mirrors.openanolis.cn/anolis/8.4/Plus/$basearch/os
+enabled=1
+gpgkey=https://mirrors.openanolis.cn/anolis/RPM-GPG-KEY-ANOLIS
+gpgcheck=0
