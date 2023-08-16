@@ -15,5 +15,5 @@ keentune param tune -i 3 --job http_long_tes/var/log/keentune/keentuned-param-tu
 cat /var/log/keentune/keentuned-param-tune-1679210052.log
 keentune param rollback
 
-token='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb21lIjoicGF5bG9hZCJ9.4twFt5NiznN84AWoo1d7KO1T_yoc0Z6XOpOVswacPZg'
+token='123'
 123
